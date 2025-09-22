@@ -8,7 +8,7 @@ Dette projekt er lavet som obligatorisk opgave for Europa Bevægelsen's EU Case 
 
 **Skole**: Herlufsholm Skole, 3.g STX Samfundsfag A
 
-**Forfatter**: M.S
+**Forfatter**: M.S, M.P, A.P, F.R
 
 ---
 
@@ -24,7 +24,7 @@ EU importerer 58% af sin energi, hvilket gør unionen sårbar over for geopoliti
 ### Indhold
 - `index.html` - Hovedrapport (besvarelse)
 - `kreativt-produkt.html` - Interaktiv visualisering
-- `about.html` - Om projektet
+
 
 ### Live Demo
 Siden er tilgængelig på: https://ston1ee.github.io/europa-bevaegelsen-opgave-thorium/
