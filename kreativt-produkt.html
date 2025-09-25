@@ -30,16 +30,18 @@
         .calculator-input input { padding: 8px; border: 1px solid #ddd; border-radius: 3px; width: 100px; }
         .calculator-result { font-weight: bold; color: #003399; margin-top: 15px; }
         .thorium-3d { background: #f0f0f0; padding: 20px; border-radius: 5px; text-align: center; margin: 20px 0; }
-        .atom-visual { display: inline-block; margin: 10px; position: relative; }
-        .nucleus { width: 40px; height: 40px; background: #003399; border-radius: 50%; display: inline-block; position: relative; }
-        .electron { width: 8px; height: 8px; background: #ffcc00; border-radius: 50%; position: absolute; animation: orbit 2s linear infinite; }
-        .electron:nth-child(1) { animation-delay: 0s; }
-        .electron:nth-child(2) { animation-delay: -1s; }
-        @keyframes orbit { 0% { transform: rotate(0deg) translateX(30px) rotate(0deg); } 100% { transform: rotate(360deg) translateX(30px) rotate(-360deg); } }
+        .atom-container { display: flex; justify-content: center; align-items: center; margin: 30px 0; }
+        .atom-visual { margin: 20px; position: relative; width: 80px; height: 80px; }
+        .nucleus { width: 40px; height: 40px; background: #003399; border-radius: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .electron { width: 8px; height: 8px; background: #ffcc00; border-radius: 50%; position: absolute; top: 50%; left: 50%; transform-origin: -50% -50%; animation: orbit 3s linear infinite; }
+        .electron:nth-child(2) { animation-delay: -1s; transform-origin: -50% -50%; }
+        .electron:nth-child(3) { animation-delay: -2s; transform-origin: -50% -50%; }
+        @keyframes orbit { 
+            0% { transform: translate(-50%, -50%) rotate(0deg) translateX(35px) rotate(0deg); } 
+            100% { transform: translate(-50%, -50%) rotate(360deg) translateX(35px) rotate(-360deg); } 
+        }
         .trademark { position: fixed; bottom: 20px; right: 20px; background: rgba(0,51,153,0.8); color: #ffcc00; padding: 8px 15px; border-radius: 8px; font-size: 0.9em; transition: transform 0.2s; }
         .trademark:hover { transform: scale(1.1); }
-        .progress-bar { width: 100%; background: #ddd; border-radius: 10px; margin: 10px 0; }
-        .progress-fill { height: 20px; background: linear-gradient(90deg, #003399, #ffcc00); border-radius: 10px; transition: width 0.3s; }
     </style>
 </head>
 <body>
@@ -65,8 +67,6 @@
                         <li>Sikkerhedsprotokol udvikling og regulatorisk godkendelse</li>
                     </ul>
                     <p><strong>Milepæle:</strong> 2028 - Første prototype reactor, 2029 - Sikkerhedscertificering</p>
-                    <div class="progress-bar"><div class="progress-fill" style="width: 85%;"></div></div>
-                    <p><em>Forventet fremgang: 85% (baseret på nuværende atomkraft-ekspertise)</em></p>
                 </div>
             </div>
             
@@ -82,8 +82,6 @@
                         <li>Etablering af thorium-forsyningskæde fra Norge</li>
                     </ul>
                     <p><strong>Milepæle:</strong> 2033 - Første netintegration, 2035 - Fuld kommerciel drift</p>
-                    <div class="progress-bar"><div class="progress-fill" style="width: 60%;"></div></div>
-                    <p><em>Forventet fremgang: 60% (afhænger af politisk støtte)</em></p>
                 </div>
             </div>
             
@@ -99,8 +97,6 @@
                         <li>Fuld integration med Green Deal-mål</li>
                     </ul>
                     <p><strong>Milepæle:</strong> 2038 - 50% målrealisering, 2040 - Energiuafhængighed</p>
-                    <div class="progress-bar"><div class="progress-fill" style="width: 40%;"></div></div>
-                    <p><em>Forventet fremgang: 40% (afhænger af international samarbejde)</em></p>
                 </div>
             </div>
         </div>
@@ -108,16 +104,19 @@
         <h2>Thorium Spaltnings-Visualisering</h2>
         <div class="thorium-3d">
             <h3>Atomær Proces Animation</h3>
-            <div class="atom-visual">
-                <div class="nucleus"></div>
-                <div class="electron"></div>
-                <div class="electron"></div>
-            </div>
-            <div class="atom-visual">
-                <div class="nucleus" style="background: #ffcc00;"></div>
-                <div class="electron"></div>
-                <div class="electron"></div>
-                <div class="electron"></div>
+            <div class="atom-container">
+                <div class="atom-visual">
+                    <div class="nucleus"></div>
+                    <div class="electron"></div>
+                    <div class="electron"></div>
+                </div>
+                <span style="margin: 0 20px; font-size: 1.5em;">→</span>
+                <div class="atom-visual">
+                    <div class="nucleus" style="background: #ffcc00;"></div>
+                    <div class="electron"></div>
+                    <div class="electron"></div>
+                    <div class="electron"></div>
+                </div>
             </div>
             <p><strong>Th-232 + neutron → Pa-233 → U-233 + fission</strong></p>
         </div>
